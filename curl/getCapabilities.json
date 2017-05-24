@@ -1,0 +1,11 @@
+{
+  "request": "GetCapabilities",
+  "service": "SOS",
+  "sections": [
+    "ServiceIdentification",
+    "ServiceProvider",
+    "OperationsMetadata",
+    "FilterCapabilities",
+    "Contents"
+  ]
+}
