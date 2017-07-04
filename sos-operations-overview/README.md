@@ -1,7 +1,7 @@
 # Sensor Observation Service Specification v2.0
 
-The OGC SOS 2.0 specification was adopted in 2012 and four extension are defined within the specification: Core, Enhanced, Transactional, and Result Handling.
-### Core Extension
+The OGC SOS 2.0 specification was adopted in 2012 and besides the core operations three extension are defined within the specification: Enhanced, Transactional, and Result Handling.
+### Core
 * `GetCapabilities`, for requesting a self-description of the service .
 * `GetObservation`, for requesting the pure sensor data encoded in Observation&Measurements (O&M).
 * `DescribeSensor`, for requesting information about the sensor itself, encoded in a Sensor Model Language (SensorML) instance document.
