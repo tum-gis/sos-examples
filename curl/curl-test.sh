@@ -9,7 +9,7 @@ curl -v \
 echo "Press ENTER key to continue..."
 read
     
-# getCapabilites - write answer response.json ---------------------------------
+# getCapabilites - write answer to response.json ------------------------------
 curl -v \
      -H "Content-Type: application/json" \
      -X POST \
@@ -37,6 +37,18 @@ curl -v \
      -X POST \
      -d @../InsertSensor/insertSensor-SOAP.xml \
     http://my.sos.server:8080/52n-sos-webapp/service
+    
+echo "Press ENTER key to continue..."
+read
+
+# insertSensor SOAP with token authorization ----------------------------------
+#   https protected server with self-signed certificate (add -k switch)
+curl -v -k \
+     -H "Content-Type: application/soap+xml;charset=UTF-8" \
+     -H "Authorization: IamTheSecretToken-c1db8eb9f3f7" \
+     -X POST \
+     -d @../InsertSensor/insertSensor-SOAP.xml \
+    https://my.sos.server:8080/52n-sos-webapp/service
     
 echo "Press ENTER key to continue..."
 read
