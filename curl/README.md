@@ -21,10 +21,10 @@ To send it to a SOS server using CURL we need to set JSON as POST
  *SOS service endpoint URL* as argument. For testing it is recommended to use the `-v` switch of CURL 
  to receive verbose log messages.
  
- -----
+-----
 :exclamation: **Note:**
-> For improved readability the following commands have been split into multiple lines using the shell `\` command
-> for [continuing lines](http://www.gnu.org/software/bash/manual/bashref.html#Escape-Character). **Avoid of whitespaces after the `\`, as they break the command.**
+> For improved readability the following commands have been split into multiple lines using the shell ` \ ` command
+> for [continuing lines](http://www.gnu.org/software/bash/manual/bashref.html#Escape-Character). **Avoid of whitespaces after the ` \ `, as they break the command.**
 
 -----
   
@@ -53,9 +53,10 @@ If you have a `getCapabilities` request stored in a JSON file, your CURL call wo
   curl  -v \
         -H "Content-Type: application/json" \
         -X POST \
-        -d @getCapabilities.json \
+        -d @"path/to my/getCapabilities.json" \
       http://mysos.de:8080/52-sos-webapp/service      
   ```
+Make sure to enclose file paths containing spaces in quotes.
 
 ## SOAP request
 Sending [SOAP requests](https://en.wikipedia.org/wiki/SOAP) to your SOS server using CURL works alomst the same as for JSON requests.
@@ -66,7 +67,7 @@ The response of the request is written to `response.xml` in this example.
 curl  -v \
       -H "Content-Type: application/soap+xml;charset=UTF-8" \
       -X POST \
-      -d @../InsertSensor/insertSensor-SOAP.xml \
+      -d @"../InsertSensor/insertSensor-SOAP.xml" \
     http://mysos.de:8080/52n-sos-webapp/service > response.xml
 ```
   
@@ -83,6 +84,6 @@ curl  -v \
       -H "Content-Type: application/json" \
       -H "Authorization: IamTheSecretToken-c1db8eb9f3f7" \
       -X POST \
-      -d @insertObservation.json \
+      -d @"path/to my/insertObservation.json" \
     http://mysos.de:8080/52-sos-webapp/service
 ```
