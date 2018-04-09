@@ -102,9 +102,6 @@ An example JSON based request to insert observations is listed below:
 }
 ```
 The `InsertObservation` request can be submitted using the SOS Client by setting the right paramaters as mentioned below:
-<p align="center">
-<img src="" width="800" />
-</p>
 
 ![InsertOperation request - temperature](../doc/images/InsertObservation_Temperature_Request.PNG)
 
